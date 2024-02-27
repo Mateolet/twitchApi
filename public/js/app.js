@@ -1,7 +1,6 @@
 const streamersContainer = document.getElementById('streamersContainer');
 
-let userData = [];
-const streamers = ['telefe', 'rubius', 'juanposite', 'c0ker'];
+const streamers = ['telefe', 'facubanzas', 'juanposite', 'c0ker'];
 
 const prod = {
   client_id: 'mgowtcq93b8oxmd3uh5gsrl2khpg55',
@@ -35,15 +34,17 @@ const handleLogging = async (data) => {
   if (headers['Authorization'] !== '' && headers['Client-Id'] !== '') {
     try {
       await Promise.all(
-        streamers.map(async (streamer) => {
+        streamers.forEach(async (streamer) => {
           const res = await axios.get(
             `https://api.twitch.tv/helix/streams?user_login=${streamer}`,
             { headers }
           );
+          const res2 = await axios.get(
+            `https://api.twitch.tv/helix/users?login=${streamer}`,
+            { headers }
+          );
           if (res.status === 200) {
-            userData = res.data.data;
-            console.log(userData);
-            displayData();
+            displayData(res.data.data, res2.data.data);
           }
         })
       );
@@ -55,17 +56,20 @@ const handleLogging = async (data) => {
 
 token();
 
-const displayData = () => {
+const displayData = (userData, userData2) => {
   userData.forEach((data) => {
     const div = document.createElement('div');
-    div.innerHTML = `
-      <figure>
-        <img src=${data.thumbnail_url} />
-        <h3>${data.user_name}</h3>
-        <p>${data.game_name}</p>
-        <p>${data.viewer_count}</p>
-      </figure>
-    `;
+    userData2.forEach((l) => {
+      div.innerHTML = `
+        <figure>
+          <img src=${l.profile_image_url} />
+          <h3>${data.user_name}</h3>
+          <p>${data.game_name}</p>
+          <p>${data.viewer_count}</p>
+          <a href="https://www.twitch.tv/${data.user_name}">Ver</a>
+        </figure>
+      `;
+    });
     streamersContainer.appendChild(div);
   });
 };
