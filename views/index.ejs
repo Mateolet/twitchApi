@@ -1,0 +1,14 @@
+<h1 class="">dashboard</h1>
+<% locals.data %>
+<% if (locals.data.length > 0) { %>
+  <% locals.data.forEach(el => { %>
+    <figure>
+      <img src="<%= el.image %>" alt="">
+    </figure>
+    <h2><%= el.user %></h2>
+    <h2><%= el.game %></h2>
+    <h2><%= el.viewers %></h2>
+  <% }) %>
+<% } else { %>
+  <p>No se encontraron datos de streams</p>
+<% } %>
