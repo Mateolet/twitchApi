@@ -8,6 +8,7 @@
     <h2><%= el.user %></h2>
     <h2><%= el.game %></h2>
     <h2><%= el.viewers %></h2>
+    <a href="/streamer/<%= el.id %>">Ver</a>
   <% }) %>
 <% } else { %>
   <p>No se encontraron datos de streams</p>

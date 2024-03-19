@@ -13,6 +13,7 @@ exports.home = async (req, res) => {
           );
           if (user) {
             processedData.push({
+              id: stream.user_id,
               game: stream.game_name,
               user: stream.user_name,
               viewers: stream.viewer_count,
@@ -27,9 +28,30 @@ exports.home = async (req, res) => {
       title: 'CocoApp',
       data: processedData,
     };
-    res.render('index', locals);
+    res.render('streamers/index', locals);
   } catch (error) {
     console.error(error);
-    res.status(500).send('Error obteniendo datos de Twitch');
+  }
+};
+
+exports.showStreamer = async (req, res) => {
+  try {
+    const getData = await getStreamers();
+    let user = null;
+
+    getData.forEach((data) => {
+      if (!user) {
+        user = data.users.find((user) => user.id === req.params.id);
+      }
+    });
+
+    const locals = {
+      title: 'CocoApp',
+      data: user ? [user] : []
+    };
+
+    res.render('streamers/show', locals);
+  } catch (error) {
+    console.log(error);
   }
 };

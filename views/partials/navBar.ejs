@@ -1,14 +1,29 @@
-<header class="bg-purple-950 shadow-sm shadow-purple-50 relative">
-  <div class="flex max-w-xs m-auto justify-between items-center h-20">
-    <h1 class="text-xl text-purple-50">Logo App</h1>
-    <nav class="">
-      <i class="text-xl text-purple-50 fa-solid fa-bars" id="openMenu"></i>
-        <ul class="hidden absolute h-screen top-0 left-0 bg-purple-950 w-full flex flex-col items-center" id="menu">
-          <i class="text-xl text-purple-50 fa-solid fa-xmark absolute left-0 p-3" id="closeMenu"></i>
-          <li class="">Home</li>
-          <li>Equipo (Nombre del equipo)</li>
-          <li>Slots</li>
-        </ul>
-    </nav>
-  </div>
+<header class="bg-sky-950 shadow-sm md:w-[30%] lg:w-[15%]">
+  <nav class="relative">
+    <div class="flex max-w-xs m-auto justify-between items-center h-20 md:flex-col md:pt-10 md:p-2 md:h-[100vh] md:justify-start">
+      <h1 class="text-xl text-sky-50">Logo App</h1>
+      <i class="text-xl text-sky-50 fa-solid fa-bars cursor-pointer md:hidden" id="openMenu"></i>
+      <ul class="absolute h-screen top-0 right-0 bg-sky-950 w-0 transition-all duration-300 ease-in-out transform md:relative md:w-full md:h-auto md:h-full" id="menu">
+        <div class="hidden flex flex-col gap-4 md:block" id="containerMenu">
+          <i class="text-xl text-emerald-50 fa-solid fa-xmark absolute left-0 p-3 cursor-pointer md:hidden" id="closeMenu"></i>
+          <li class="flex justify-center items-center mt-20 py-2 gap-6 md:justify-start">
+            <i class="fa-solid fa-play w-[40%] text-2xl text-sky-50 uppercase font-bold text-end md:text-lg md:w-[20%] md:text-center"></i>
+            <a href="/" class="text-start w-[60%] text-2xl text-sky-50 uppercase font-bold md:text-lg md:w-[50%]">En vivo</a>
+          </li>
+          <li class="flex justify-center items-center py-2 gap-6 md:justify-start">
+            <i class="fa-solid fa-people-group w-[40%] text-2xl text-sky-50 uppercase font-bold text-end md:text-lg md:w-[20%] md:text-center""></i>
+            <a href="/satoshi" class="text-start w-[60%] text-2xl text-sky-50 uppercase font-bold md:text-lg md:w-auto">Satoshi</a>
+          </li>
+          <li class="flex justify-center items-center py-2 gap-6 md:justify-start">
+            <i class="fa-solid fa-wallet w-[40%] text-2xl text-sky-50 uppercase font-bold text-end md:text-lg md:w-[20%] md:text-center""></i>
+            <a href="/slots" class="text-start w-[60%] text-2xl text-sky-50 uppercase font-bold md:text-lg md:w-auto">Slots</a>
+          </li>
+          <!-- Footer -->
+          <footer class="flex w-full absolute bottom-0">
+            <%- include('../partials/footer.ejs') %>
+          </footer>
+        </div>
+      </ul>
+    </div>
+  </nav>
 </header>
