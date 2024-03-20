@@ -1,27 +1,20 @@
-<header class="bg-sky-950 shadow-sm md:w-[30%] lg:w-[15%]">
+<header class="bg-amber-800">
   <nav class="relative">
-    <div class="flex max-w-xs m-auto justify-between items-center h-20 md:flex-col md:pt-10 md:p-2 md:h-[100vh] md:justify-start">
-      <h1 class="text-xl text-sky-50">Logo App</h1>
-      <i class="text-xl text-sky-50 fa-solid fa-bars cursor-pointer md:hidden" id="openMenu"></i>
-      <ul class="absolute h-screen top-0 right-0 bg-sky-950 w-0 transition-all duration-300 ease-in-out transform md:relative md:w-full md:h-auto md:h-full" id="menu">
-        <div class="hidden flex flex-col gap-4 md:block" id="containerMenu">
-          <i class="text-xl text-emerald-50 fa-solid fa-xmark absolute left-0 p-3 cursor-pointer md:hidden" id="closeMenu"></i>
-          <li class="flex justify-center items-center mt-20 py-2 gap-6 md:justify-start">
-            <i class="fa-solid fa-play w-[40%] text-2xl text-sky-50 uppercase font-bold text-end md:text-lg md:w-[20%] md:text-center"></i>
-            <a href="/" class="text-start w-[60%] text-2xl text-sky-50 uppercase font-bold md:text-lg md:w-[50%]">En vivo</a>
+    <div class="flex max-w-xs mx-auto justify-between items-center h-20 md:max-w-lg lg:max-w-2xl xl:max-w-3xl 2xl:max-w-6xl">
+      <h1 class="text-xl text-orange-100">Logo App</h1>
+      <i class="text-xl text-orange-100 fa-solid fa-bars cursor-pointer md:hidden" id="openMenu"></i>
+      <ul class="absolute h-screen top-0 right-0 bg-orange-950 w-0 transition-all duration-300 ease-in-out transform md:relative md:h-auto md:w-auto md:bg-amber-800" id="menu">
+        <div class="hidden mt-20 flex flex-col justify-cenet gap-4 md:mt-0 md:flex md:gap-3 md:flex-row" id="containerMenu">
+          <i class="text-xl text-emerald-50 fa-solid fa-xmark absolute top-0 left-0 p-3 cursor-pointer md:hidden" id="closeMenu"></i>
+          <li class="text-center p-1 rounded hover:bg-amber-700 transition-all duration-300 ease-in-out">
+            <a href="/" class="text-2xl text-orange-100 uppercase font-bold md:text-[15px] active:text-black">En vivo</a>
           </li>
-          <li class="flex justify-center items-center py-2 gap-6 md:justify-start">
-            <i class="fa-solid fa-people-group w-[40%] text-2xl text-sky-50 uppercase font-bold text-end md:text-lg md:w-[20%] md:text-center""></i>
-            <a href="/satoshi" class="text-start w-[60%] text-2xl text-sky-50 uppercase font-bold md:text-lg md:w-auto">Satoshi</a>
+          <li class="text-center p-1 rounded hover:bg-amber-700 transition-all duration-300 ease-in-out">
+            <a href="/satoshi" class="text-2xl text-orange-100 uppercase font-bold md:text-[15px]">Satoshi</a>
           </li>
-          <li class="flex justify-center items-center py-2 gap-6 md:justify-start">
-            <i class="fa-solid fa-wallet w-[40%] text-2xl text-sky-50 uppercase font-bold text-end md:text-lg md:w-[20%] md:text-center""></i>
-            <a href="/slots" class="text-start w-[60%] text-2xl text-sky-50 uppercase font-bold md:text-lg md:w-auto">Slots</a>
+          <li class="text-center p-1 rounded hover:bg-amber-700 transition-all duration-300 ease-in-out">
+            <a href="/slots" class="text-2xl text-orange-100 uppercase font-bold md:text-[15px]">Slots</a>
           </li>
-          <!-- Footer -->
-          <footer class="flex w-full absolute bottom-0">
-            <%- include('../partials/footer.ejs') %>
-          </footer>
         </div>
       </ul>
     </div>

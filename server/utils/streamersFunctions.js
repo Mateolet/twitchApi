@@ -45,29 +45,29 @@ const getStreamers = async () => {
   }
 };
 
-const getStreamer = async () => {
-  const data = await token();
-  if (data) {
-    headers['Authorization'] = `Bearer ${data.access_token}`;
-    headers['Client-Id'] = prod.client_id;
-  }
+// const getStreamer = async () => {
+//   const data = await token();
+//   if (data) {
+//     headers['Authorization'] = `Bearer ${data.access_token}`;
+//     headers['Client-Id'] = prod.client_id;
+//   }
 
-  try {
-    const response = await axios.get(`https://api.twitch.tv/helix/users?id=590906662`, {headers});
+//   try {
+//     const response = await axios.get(`https://api.twitch.tv/helix/users?id=590906662`, {headers});
 
-    const userData = response.data.data[0];
-    const displayName = userData.display_name;
-    const description = userData.description;
-    const profileImageUrl = userData.profile_image_url;
+//     const userData = response.data.data[0];
+//     const displayName = userData.display_name;
+//     const description = userData.description;
+//     const profileImageUrl = userData.profile_image_url;
 
-    console.log('User Display Name:', displayName);
-    console.log('User Description:', description);
-    console.log('User Profile Image URL:', profileImageUrl);
-  } catch (error) {
-    console.log(error);
-  }
-}
+//     console.log('User Display Name:', displayName);
+//     console.log('User Description:', description);
+//     console.log('User Profile Image URL:', profileImageUrl);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
 
-getStreamer();
+// getStreamer();
 
 module.exports = { getStreamers };
