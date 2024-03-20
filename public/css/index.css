@@ -13,9 +13,26 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
 }
 
-.active {
-  background-color: rgb(12 74 110);
-  border-radius: 12px;
+::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #525252;
+}
+
+.active a {
+  color: rgb(251 191 36);
+}
+
+#banner {
+  height: calc(100vh - 5rem);
 }
